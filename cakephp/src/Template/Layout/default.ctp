@@ -18,26 +18,26 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <!DOCTYPE html>
 <html>
 <head>
-    <?= $this->Html->charset() ?>
+    <?php echo $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+        <?php echo $cakeDescription ?>:
+        <?php echo  $this->fetch('title') ?>
     </title>
-    <?= $this->Html->meta('icon') ?>
+    <?php echo $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('style.css') ?>
+    <?php echo $this->Html->css('base.css') ?>
+    <?php echo $this->Html->css('style.css') ?>
 
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    <?php echo $this->fetch('meta') ?>
+    <?php echo $this->fetch('css') ?>
+    <?php echo $this->fetch('script') ?>
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
+                <h1><a href=""><?php echo $this->fetch('title') ?></a></h1>
             </li>
         </ul>
         <div class="top-bar-section">
@@ -47,9 +47,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </ul>
         </div>
     </nav>
-    <?= $this->Flash->render() ?>
+    <?php echo $this->Flash->render() ?>
     <div class="container clearfix">
-        <?= $this->fetch('content') ?>
+        <?php echo $this->fetch('content') ?>
     </div>
     <footer>
     </footer>
