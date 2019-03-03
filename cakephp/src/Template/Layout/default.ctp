@@ -10,12 +10,9 @@
         <?php echo  $this->fetch('title') ?>
     </title>
     <?php echo $this->Html->meta('icon') ?>
-
-    <?php echo $this->Html->css('base.css') ?>
-    <?php echo $this->Html->css('style.css') ?>
-
     <?php echo $this->fetch('meta') ?>
-    <?php echo $this->fetch('css') ?> <?php echo $this->fetch('script') ?>
+    <?php echo $this->fetch('css') ?>
+    <?php echo $this->fetch('script') ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -27,8 +24,6 @@
 </head>
 <body>
     <?php echo $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?php echo $this->fetch('content') ?>
-    </div>
+    <?php echo $this->fetch('content') ?>
 </body>
 </html>
