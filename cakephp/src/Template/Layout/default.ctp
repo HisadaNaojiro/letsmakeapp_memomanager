@@ -30,7 +30,5 @@
     <div class="container clearfix">
         <?php echo $this->fetch('content') ?>
     </div>
-    <footer>
-    </footer>
 </body>
 </html>
