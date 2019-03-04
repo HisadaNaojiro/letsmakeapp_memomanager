@@ -23,7 +23,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
 </head>
 <body>
-    <?php echo $this->Flash->render() ?>
-    <?php echo $this->fetch('content') ?>
+    <?php echo $this->element('header'); ?>
+    <div class="container mt-5">
+      <div class="col-md-12">
+        <?php echo $this->Flash->render() ?>
+        <?php echo $this->fetch('content') ?>
+      </div>
+    </div>
 </body>
 </html>
