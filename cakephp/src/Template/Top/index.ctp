@@ -1,4 +1,10 @@
-<table class="table table-bordered">
+<div class="text-right">
+  <a href="<?php echo $this->Url->build(['controller' => 'Memos', 'action' => 'detail']);?>" class="btn btn-success">
+    メモを作成する
+  </a>
+</div>
+
+<table class="table table-bordered mt-3">
   <thead class="thead-light">
     <tr>
       <th scope="col">日付</th>
