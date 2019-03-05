@@ -10,5 +10,7 @@ class MemosController extends AppController
 {
   public function detail()
   {
+    $MemoEntity = $this->Memos->newEntity();
+    $this->set('MemoEntity', $MemoEntity);
   }
 }
