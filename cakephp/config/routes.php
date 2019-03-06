@@ -63,7 +63,10 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Top', 'action' => 'index']);
+    $routes->connect('/memos/:memo_id', ['controller' => 'Memos', 'action' => 'detail'])
+            ->setPatterns(['memo_id' => '[0-9]+']);
     $routes->connect('/memos/add', ['controller' => 'Memos', 'action' => 'detail']);
+
 
     /**
      * Connect catchall routes for all controllers.

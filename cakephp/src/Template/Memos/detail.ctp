@@ -1,4 +1,4 @@
-<?php echo $this->Form->create(false, ['novalidate' => true,'class' => 'form-horizontal']); ?>
+<?php echo $this->Form->create($MemoEntity, ['novalidate' => true,'class' => 'form-horizontal']); ?>
 
 <div>
   <h2>メモ作成</h2><hr />
@@ -12,6 +12,7 @@
             [
               'class' => 'form-control',
               'placeholder' => 'タイトル',
+              'default' => $MemoEntity->get('title'),
             ]
           ); ?>
             <?php echo $this->Form->error('title', null, ['class' => 'text-danger']); ?>
@@ -25,6 +26,7 @@
             [
               'class' => 'form-control',
               'placeholder' => 'メモの内容をここに記述してください',
+              'default' => $MemoEntity->get('contents'),
             ]
           ); ?>
             <?php echo $this->Form->error('contents', null, ['class' => 'text-danger']); ?>
