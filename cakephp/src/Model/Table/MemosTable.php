@@ -6,6 +6,20 @@ use Cake\Validation\Validator;
 class MemosTable extends AppTable
 {
 
+  public function initialize(array $config)
+  {
+    $this->setAlias('m');
+  }
+
+  public function getEntityById($id)
+  {
+    $query = $this->find('all')
+      ->where(['m.id' => $id])
+      ->where(['m.valid' => 1])
+    ;
+    return $query->first();
+  }
+
   public function validationDefault(Validator $validator)
   {
 
@@ -20,8 +34,8 @@ class MemosTable extends AppTable
       ->notEmpty('contents', '内容を入力してください')
       ->add('contents',[
           'isMaxlength' => [
-            'rule' => ['maxLength' , 500],
-            'message' => '内容は500字以内で入力してください'
+            'rule' => ['maxLength' , 200],
+            'message' => '内容は200字以内で入力してください'
           ]
       ])
     ;

@@ -11,7 +11,13 @@ class MemosController extends AppController
 {
   public function detail()
   {
-    $MemoEntity = $this->Memos->newEntity($this->request->getData());
+    if ($this->request->getParam('memo_id')) {
+      $MemoEntity = $this->Memos->getEntityById($this->request->getParam('memo_id'));
+      $this->Memos->patchEntity($MemoEntity, $this->request->getData());
+    } else {
+      $MemoEntity = $this->Memos->newEntity($this->request->getData());
+    }
+
     $this->set('MemoEntity', $MemoEntity);
 
     if (!$this->request->is('post')) {
