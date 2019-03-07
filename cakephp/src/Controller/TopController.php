@@ -11,6 +11,6 @@ class TopController extends AppController
 {
   public function index()
   {
-    $this->set('MemoEntities', TableRegistry::get('Memos')->getEntities());
+    $this->set('MemoPaginator' , $this->paginate(TableRegistry::get('Memos')->getPaginator() , ['limit' => 5]));
   }
 }

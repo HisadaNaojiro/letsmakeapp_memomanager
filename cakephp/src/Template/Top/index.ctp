@@ -4,7 +4,7 @@
   </a>
 </div>
 
-<?php if (!empty($MemoEntities)) : ?>
+<?php if (!empty($MemoPaginator)) : ?>
   <table class="table table-bordered mt-3">
     <thead class="thead-light">
       <tr>
@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <?php foreach($MemoEntities as $MemoEntity): ?>
+      <?php foreach($MemoPaginator as $MemoEntity): ?>
         <tr>
           <th scope="row">
             <?php echo h(date('Y/m/d', strtotime($MemoEntity->get('created_at')))); ?>
@@ -31,6 +31,8 @@
       <?php endforeach; ?>
     </tbody>
   </table>
+
+  <?php echo $this->element('paginator', ['Paginator' => $MemoPaginator]); ?>
 <?php else : ?>
   <div class="alert alert-warning mt-3" role="alert">メモがありません </div>
 <?php endif; ?>
