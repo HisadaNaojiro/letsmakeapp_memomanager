@@ -20,6 +20,16 @@ class MemosTable extends AppTable
     return $query->first();
   }
 
+  public function getEntities()
+  {
+    $query = $this->find('all')
+      ->where(['m.valid' => 1])
+      ->order(['m.created_at' => 'DESC'])
+      ->limit(5);
+    ;
+    return $query->all();
+  }
+
   public function validationDefault(Validator $validator)
   {
 
