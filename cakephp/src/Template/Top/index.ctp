@@ -5,6 +5,7 @@
 </div>
 
 <?php if (!empty($MemoPaginator)) : ?>
+  <?php echo $this->Paginator->counter(['format' => 'range']); ?>
   <table class="table table-bordered mt-3">
     <thead class="thead-light">
       <tr>
